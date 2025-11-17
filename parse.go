@@ -4,12 +4,12 @@ import (
 	"context"
 	"time"
 
+	"github.com/Runninginsilence1/lsblkjson_parse/internal/utils"
 	"github.com/Runninginsilence1/lsblkjson_parse/model"
-	"github.com/Runninginsilence1/lsblkjson_parse/utils"
 )
 
-// ReadStorageDevicesContext 监听信号以中止检测USB设备
-func ReadStorageDevicesContext(ctx context.Context, callback func([]model.Blockdevice)) {
+// ReadForensicDiskContextCallback 监听信号以中止检测USB设备
+func ReadForensicDiskContextCallback(ctx context.Context, callback func([]model.Blockdevice)) {
 	go func() {
 		for {
 			select {
@@ -26,4 +26,8 @@ func ReadStorageDevicesContext(ctx context.Context, callback func([]model.Blockd
 			time.Sleep(2 * time.Second)
 		}
 	}()
+}
+
+func ReadForensicDiskContext(ctx context.Context) {
+
 }

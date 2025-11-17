@@ -1,11 +1,5 @@
 package model
 
-import (
-	"path/filepath"
-	"slices"
-	"time"
-)
-
 type Blockdevices struct {
 	Blockdevices []Blockdevice `json:"blockdevices"`
 }
@@ -37,44 +31,4 @@ type Partition = Device
 type FileWithTime struct {
 	Name    string
 	ModTime string
-}
-
-type FileInfo struct {
-	Name    string `json:"name"`
-	Path    string `json:"path"`
-	ModTime string `json:"modified"` // 修改日期
-	Size    int64  `json:"size"`     // 文件大小
-	Ext     string `json:"ext"`      // 文件后缀名
-}
-
-func ParseExtType(Name string) string {
-	ext := filepath.Ext(Name)
-	// 检查后缀名并返回相应的文件类型
-	if slices.Contains(textTypeList, ext) {
-		return FileInfoExtText
-	} else if slices.Contains(picTypeList, ext) {
-		return FileInfoExtPic
-	} else if slices.Contains(videoTypeList, ext) {
-		return FileInfoExtVideo
-	} else {
-		return FileInfoExtOther
-	}
-}
-
-const (
-	FileInfoExtText  = "text"
-	FileInfoExtPic   = "pic"
-	FileInfoExtVideo = "video"
-	FileInfoExtOther = "other"
-)
-
-var textTypeList = []string{".txt", ".md", ".json", ".xml", ".html", ".css", ".js"}
-var picTypeList = []string{".png", ".jpg", ".jpeg", ".gif", ".bmp", ".svg"}
-var videoTypeList = []string{".mp4", ".avi", ".mov", ".wmv", ".flv"}
-
-// DiskItem 扫描的文件结构
-type DiskItem struct {
-	DevicePath     string    `json:"device_path"`
-	MountPointPath string    `json:"mount_point_path"`
-	SelectTime     time.Time `json:"-"`
 }
