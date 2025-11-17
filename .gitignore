@@ -1,0 +1,73 @@
+# -----------------------------------------------------------------------------
+# Go 编译和项目文件 (Go Compilation and Project Files)
+# -----------------------------------------------------------------------------
+
+# 忽略所有 Go 编译生成的可执行文件 (Ignore all compiled binaries)
+# 忽略当前目录和子目录中编译生成的可执行文件
+*.exe
+*.dll
+*.so
+*.dylib
+*/main
+*/bin/*
+!*/bin/*.test # 允许保留测试生成的文件
+
+# 忽略 Go Modules 依赖包
+# 现代 Go 版本通常在 $GOPATH/pkg/mod 中管理依赖，但如果项目中有 vendor 目录则需要忽略
+/vendor/
+
+# 忽略 Go 模块依赖管理文件 (Ignore Go module dependency management files)
+# go.sum 文件通常应该被提交，但某些特殊情况下可能选择忽略
+# go.mod
+# go.sum
+
+# 忽略测试缓存 (Ignore test cache)
+# 位于项目目录下的测试缓存文件
+/pkg/
+
+# 忽略交叉编译的产物 (Ignore cross-compiled artifacts)
+# 比如在当前项目中生成的 Linux 或 Windows 版本
+*/
+!*/
+
+# -----------------------------------------------------------------------------
+# 操作系统和编辑器文件 (OS and Editor Files)
+# -----------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+# Backup files
+# .~*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# -----------------------------------------------------------------------------
+# IDE 和编辑器特定文件 (IDE and Editor Specific Files)
+# -----------------------------------------------------------------------------
+
+# VS Code
+.vscode/
+
+# IntelliJ IDEA / GoLand
+.idea/
+
+# Vim/Neovim 交换文件 (Swap and backup files)
+[._]*.s[a-v][a-z]
+[._]*.swp
+[._]*.swo
+[._]*.swn
+[._]*.bak
+[._]*.tmp
+
+# Emacs 备份文件
+#*#
+
+# ----------------
