@@ -63,3 +63,8 @@ func FormatFileSize(size uint64) string {
 	// 格式化文件大小
 	return fmt.Sprintf("%d %s", size, units[unitIndex])
 }
+
+func JSONMarshalPretty(v any) ([]byte, error) {
+	out, err := json.MarshalIndent(v, "", "    ")
+	return out, err
+}
