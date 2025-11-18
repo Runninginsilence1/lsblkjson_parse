@@ -45,8 +45,8 @@ func ReadForensicDisk() ([]model.Blockdevice, error) {
 	}
 	err = json.Unmarshal(outContext, &blockdeviceList)
 	if err != nil {
-		fmt.Println("JSON 解码出错:", err)
-		return returnDeviceList, nil
+		err = fmt.Errorf("JSON 解码出错: %w", err)
+		return returnDeviceList, err
 	}
 	for n, device := range blockdeviceList.Blockdevices {
 		if utils.MatchMountPoint(device.Mountpoint) {
