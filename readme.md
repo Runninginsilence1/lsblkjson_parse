@@ -1,3 +1,6 @@
+# Target
+兼容ubuntu22和ubuntu24自带的lsblk命令输出的json某些字段不统一的问题
+
 # How to use
 
 ```shell

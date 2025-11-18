@@ -14,21 +14,21 @@
         {
           "name": "sda1",
           "path": "/dev/sda1",
-          "fsavail": 1118556160,
-          "fssize": 1124995072,
+          "fsavail": "491724800",
+          "fssize": "498102272",
           "fstype": "vfat",
-          "fsused": 6438912,
+          "fsused": "6377472",
           "fsuse%": "1%",
           "mountpoint": "/boot/efi",
           "label": null
         },{
           "name": "sda2",
           "path": "/dev/sda2",
-          "fsavail": 1682857984,
-          "fssize": 2040373248,
+          "fsavail": "238129152",
+          "fssize": "451350528",
           "fstype": "ext4",
-          "fsused": 233365504,
-          "fsuse%": "11%",
+          "fsused": "178212864",
+          "fsuse%": "39%",
           "mountpoint": "/boot",
           "label": null
         },{
@@ -43,40 +43,60 @@
           "label": null,
           "children": [
             {
-              "name": "dm_crypt-0",
-              "path": "/dev/mapper/dm_crypt-0",
-              "fsavail": null,
-              "fssize": null,
-              "fstype": "LVM2_member",
-              "fsused": null,
-              "fsuse%": null,
-              "mountpoint": null,
-              "label": null,
-              "children": [
-                {
-                  "name": "ubuntu--vg-ubuntu--lv",
-                  "path": "/dev/mapper/ubuntu--vg-ubuntu--lv",
-                  "fsavail": 39257194496,
-                  "fssize": 62285197312,
-                  "fstype": "ext4",
-                  "fsused": 19790004224,
-                  "fsuse%": "32%",
-                  "mountpoint": "/",
-                  "label": null
-                }
-              ]
+              "name": "sda3_crypt",
+              "path": "/dev/mapper/sda3_crypt",
+              "fsavail": "12553068544",
+              "fssize": "58718265344",
+              "fstype": "ext4",
+              "fsused": "43149283328",
+              "fsuse%": "73%",
+              "mountpoint": "/",
+              "label": null
             }
           ]
         },{
           "name": "sda4",
           "path": "/dev/sda4",
-          "fsavail": 407595495424,
-          "fssize": 430951755776,
+          "fsavail": "359386091520",
+          "fssize": "437397999616",
           "fstype": "ext4",
-          "fsused": 1390432256,
-          "fsuse%": "0%",
+          "fsused": "55718617088",
+          "fsuse%": "13%",
           "mountpoint": "/mnt4",
           "label": null
+        }
+      ]
+    },{
+      "name": "sdb",
+      "path": "/dev/sdb",
+      "fsavail": null,
+      "fssize": null,
+      "fstype": null,
+      "fsused": null,
+      "fsuse%": null,
+      "mountpoint": null,
+      "label": null,
+      "children": [
+        {
+          "name": "sdb1",
+          "path": "/dev/sdb1",
+          "fsavail": "76965871616",
+          "fssize": "123009892352",
+          "fstype": "exfat",
+          "fsused": "46044020736",
+          "fsuse%": "37%",
+          "mountpoint": "/media/Ventoy",
+          "label": "Ventoy"
+        },{
+          "name": "sdb2",
+          "path": "/dev/sdb2",
+          "fsavail": "4827136",
+          "fssize": "33277440",
+          "fstype": "vfat",
+          "fsused": "28450304",
+          "fsuse%": "85%",
+          "mountpoint": "/media/VTOYEFI",
+          "label": "VTOYEFI"
         }
       ]
     }
